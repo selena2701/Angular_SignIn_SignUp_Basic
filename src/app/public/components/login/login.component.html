@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card my-6">
+
+        <form class="card-body cardbody-color p-lg-5">
+
+          <div class="text-center">
+            <img src="../../../assets/images/ProCon_Logo-blue.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+              width="200px" alt="profile">
+          </div>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="mb-3">
+              <input type="email" class="form-control" id="Username" aria-describedby="emailHelp" formControlName="email"
+                placeholder="Email" >
+                <mat-error *ngIf="this.loginForm.get('email')?.touched && this.loginForm.get('email')?.hasError('required')">
+                  Email is required</mat-error>
+                <mat-error *ngIf="this.loginForm.get('email')?.touched && this.loginForm.get('email')?.hasError('email')">
+                  Email must be a valid Email</mat-error>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+              <mat-error
+                        *ngIf="this.loginForm.get('password')?.touched && this.loginForm.get('password')?.hasError('required')">
+                        Password is required
+              </mat-error>
+            </div>
+
+            <div class="button">
+              <button type="submit"  [disabled]="!loginForm.valid" class="btn btn-color px-5 mb-5 w-100">Login</button>
+            </div>
+            <div id="emailHelp" class="form-text text-center mb-5 text-dark">Not Registered? <a [routerLink]="['../register']" class="text-dark fw-bold"> Create an
+                Account</a>
+            </div>
+          </form>
+      </form>
+    </div>
+  </div>
+</div>
+<!--<div>
+  <a [routerLink]="['../register']">Go to Register</a>
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <mat-form-field>
+          <input type="email" matInput placeholder="Email" formControlName="email">
+          <mat-error *ngIf="this.loginForm.get('email')?.touched && this.loginForm.get('email')?.hasError('required')">
+            Email is required</mat-error>
+          <mat-error *ngIf="this.loginForm.get('email')?.touched && this.loginForm.get('email')?.hasError('email')">
+            Email must be a valid Email</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" formControlName="password">
+          <mat-error
+            *ngIf="this.loginForm.get('password')?.touched && this.loginForm.get('password')?.hasError('required')">
+            Password is required</mat-error>
+        </mat-form-field>
+
+        <div class="button">
+          <button type="submit" mat-button [disabled]="!loginForm.valid">Login</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+-->

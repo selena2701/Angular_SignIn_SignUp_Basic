@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+}
+.btn-color{
+  background-color: #0e1c36;
+  color: #fff;
+
+}
+
+.profile-image-pic{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+
+
+.cardbody-color{
+  background-color: #ebf2fa;
+  .abc{
+    width: 100%;
+  }
+}
+
+a{
+  text-decoration: none;
+}
+mat-card {
+  max-width: 600px;
+
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+
+    form {
+      .mat-form-field {
+        width: 100%;
+        min-width: 300px;
+      }
+
+      .error {
+        padding: 16px;
+        width: 300px;
+        color: white;
+        background-color: red;
+      }
+
+      .button {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
